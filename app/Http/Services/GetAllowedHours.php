@@ -7,7 +7,6 @@ use Illuminate\Support\Collection;
 
 class GetAllowedHours
 {
-
     private ReservationsRepository $reservationsRepository;
 
     public function __construct(ReservationsRepository $reservationsRepository)

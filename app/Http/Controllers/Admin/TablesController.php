@@ -11,9 +11,11 @@ use App\Http\Requests\CreateRestaurantRequest;
 
 use App\Http\Requests\CreateTablesRequest;
 use App\Http\Services\TablesServices;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class TablesController
 {
@@ -26,14 +28,14 @@ class TablesController
         $this->tablesRepository = $tablesRepository;
     }
 
-    public function index(int $restautantId)
+    public function index(int $restautantId): Response
     {
         $data = $this->tablesRepository->getTablesByRestaurant($restautantId);
 
         return Inertia::render('Tables/TablesIndex')->with(['tables'=> $data, 'restaurantId' => $restautantId]);
     }
 
-    public function store(CreateTablesRequest $request)
+    public function store(CreateTablesRequest $request): JsonResponse
     {
         $response = response()->json(['status' => 'fail'], 400);
         if ($this->tablesServices->addNewTable([

@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 
 class PlaceOrderService
 {
-
     private ReservationsRepository $reservationsRepository;
     private TablesRepository $tablesRepository;
     private ContactsRepository $contactsRepository;

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class TablesServices
 {
-
     private TablesRepository $tablesRepository;
     private RestaurantsRepository $restaurantsRepository;
 

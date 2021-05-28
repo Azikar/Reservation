@@ -15,9 +15,10 @@ class ReservationContactsController
     {
         $this->checkIfCanAddContact = $checkIfCanAddContact;
     }
+
     public function checkIfCanAddContact(CheckIfCanAddMoreRequest $request): JsonResponse
     {
-        $response = $this->checkIfCanAddContact->execute($request->all());
+        $response = $this->checkIfCanAddContact->execute($request->validated());
 
         return response()->json([
             'errors' => !$response ? ['error' => [ErrorsTexts::RESTAURANT_LIMIT]] : [],

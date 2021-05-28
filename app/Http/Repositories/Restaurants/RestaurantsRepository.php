@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 class RestaurantsRepository extends BaseRepository
 {
-
     /**
      * UserRepository constructor.
      *

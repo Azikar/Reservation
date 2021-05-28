@@ -6,6 +6,7 @@ use App\Http\Repositories\Reservations\ReservationsRepository;
 use App\Http\Repositories\Restaurants\RestaurantsRepository;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class ReservationsController
 {
@@ -19,7 +20,7 @@ class ReservationsController
         $this->reservationsRepository = $reservationsRepository;
     }
 
-    public function index(int $restaurantId)
+    public function index(int $restaurantId): Response
     {
         if ($this->restaurantsRepository->restaurantBelongsToUser(Auth::id(), $restaurantId)) {
             $data = $this->reservationsRepository->fetchReservationsByRestaurant($restaurantId);

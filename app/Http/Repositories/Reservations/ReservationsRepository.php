@@ -10,10 +10,8 @@ use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 
-
 class ReservationsRepository extends BaseRepository
 {
-
     /**
      * UserRepository constructor.
      *

@@ -12,13 +12,13 @@ class ReservationsController
     public function allowedHours(GetAllowedHours $getAllowedHours, AllowedHoursRequest $request): JsonResponse
     {
         return response()->json($getAllowedHours->getAllowedHours(
-            $request->all()
+            $request->validated()
         ));
     }
 
     public function placeReservation(PlaceReservationRequest $request,PlaceOrderService $placeOrderService): JsonResponse
     {
-        $errors = $placeOrderService->placeOrder($request->all());
+        $errors = $placeOrderService->placeOrder($request->validated());
 
         return response()->json([
             'errors' => $errors,
