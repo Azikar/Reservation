@@ -6,9 +6,12 @@ docker-compose up
 
 In new terminal
 
-docker-compose exec laravel.test composer install
+docker-compose exec laravel.test composer install 
+
 docker-compose exec laravel.test npm install
+
 docker-compose exec laravel.test php artisan migrate
+
 docker-compose exec laravel.test npm run watch-poll  or docker-compose exec laravel.test npm run dev
 
 
