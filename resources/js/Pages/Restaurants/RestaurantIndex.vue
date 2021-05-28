@@ -18,11 +18,14 @@
                                 Tables count
                             </div>
                             <div class="col-sm">
+                                Clients limit
+                            </div>
+                            <div class="col-sm">
                                 Actions
                             </div>
                         </div>
                         <template v-for="restaurant in restaurants">
-                            <Restaurant :id="restaurant.id" :name="restaurant.name" :tables-count="restaurant.tables_count"/>
+                            <Restaurant :id="restaurant.id" :name="restaurant.name" :tables-count="restaurant.tables_count" :clients-limit="restaurant.max_people"/>
                         </template>
                     </div>
                 </div>

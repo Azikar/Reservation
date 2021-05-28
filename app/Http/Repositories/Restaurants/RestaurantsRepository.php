@@ -40,6 +40,7 @@ class RestaurantsRepository extends BaseRepository
                 'id',
                 'admin_id',
                 'name',
+                'max_people'
             ])
             ->addSelect(DB::raw('(select COUNT(id) from `tables` where `tables`.`restaurant_id` = `restaurants`.`id`) as tables_count'))
             ->with([

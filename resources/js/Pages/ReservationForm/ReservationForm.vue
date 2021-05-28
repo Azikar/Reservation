@@ -277,6 +277,9 @@ export default {
                     this.form
                 ).then((response) => {
                     this.message = 'success'
+                    setTimeout(function(){
+                        window.location.reload();
+                    },3000);
                     this.$refs.success.open();
                 }).catch((error) => {
                     this.errors = error.response.data.errors

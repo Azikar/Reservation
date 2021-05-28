@@ -8,6 +8,9 @@
                 {{tablesCount}}
             </div>
             <div class="col-sm">
+                {{clientsLimit}}
+            </div>
+            <div class="col-sm">
                 <div class="row">
                     <div class="col-sm">
                          <a :href="tablesUrl">Display tables</a>
@@ -55,6 +58,11 @@ export default {
             default: null,
             required: true,
         },
+        clientsLimit: {
+            type: Number,
+            default: null,
+            required: true,
+        }
     },
     data() {
         return {

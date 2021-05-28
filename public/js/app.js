@@ -19627,6 +19627,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         this.form.end = parseInt(this.end.HH);
         axios.post('/' + Ziggy.routes['placeReservation'].uri, this.form).then(function (response) {
           _this5.message = 'success';
+          setTimeout(function () {
+            window.location.reload();
+          }, 3000);
 
           _this5.$refs.success.open();
         })["catch"](function (error) {
@@ -19837,6 +19840,11 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     },
     tablesCount: {
+      type: Number,
+      "default": null,
+      required: true
+    },
+    clientsLimit: {
       type: Number,
       "default": null,
       required: true
@@ -25558,12 +25566,15 @@ var _hoisted_4 = {
   "class": "col-sm"
 };
 var _hoisted_5 = {
-  "class": "row"
-};
-var _hoisted_6 = {
   "class": "col-sm"
 };
+var _hoisted_6 = {
+  "class": "row"
+};
 var _hoisted_7 = {
+  "class": "col-sm"
+};
+var _hoisted_8 = {
   "class": "col-sm"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25571,11 +25582,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.tablesCount), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.clientsLimit), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $options.tablesUrl
   }, "Display tables", 8
   /* PROPS */
-  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
     href: $options.reservationsUrl
   }, "Display reservations", 8
   /* PROPS */
@@ -25625,6 +25638,8 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "class": "col-sm"
 }, " Tables count "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "col-sm"
+}, " Clients limit "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "col-sm"
 }, " Actions ")], -1
 /* HOISTED */
 );
@@ -25643,10 +25658,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Restaurant, {
           id: restaurant.id,
           name: restaurant.name,
-          "tables-count": restaurant.tables_count
+          "tables-count": restaurant.tables_count,
+          "clients-limit": restaurant.max_people
         }, null, 8
         /* PROPS */
-        , ["id", "name", "tables-count"]);
+        , ["id", "name", "tables-count", "clients-limit"]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))])])])])];
