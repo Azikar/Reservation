@@ -10,7 +10,6 @@ use Inertia\Response;
 
 class ReservationsController
 {
-
     private RestaurantsRepository $restaurantsRepository;
     private ReservationsRepository $reservationsRepository;
 
