@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Repositories\Tables;
 
@@ -8,7 +10,6 @@ use App\Models\Tables;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
-
 
 class TablesRepository extends BaseRepository
 {
@@ -39,7 +40,6 @@ class TablesRepository extends BaseRepository
                 ['restaurants.admin_id', Auth::id()]
             ])->get();
     }
-
 
     public function getTableByIdAndRestaurantId(int $tableId, int $restaurantId): Tables
     {

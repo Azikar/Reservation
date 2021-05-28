@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Services;
 
@@ -19,13 +21,14 @@ class PlaceOrderService
     private CheckTableLimit $checkTableLimit;
     private CheckIfTimeIsTaken $checkIfTimeIsTaken;
 
-    public function __construct(ReservationsRepository $reservationsRepository,
-                                TablesRepository $tablesRepository,
-                                ContactsRepository $contactsRepository,
-                                FormatDate $formatDate,
-                                CheckRestaurantLimit $checkRestaurantLimit,
-                                CheckTableLimit $checkTableLimit,
-                                CheckIfTimeIsTaken $checkIfTimeIsTaken
+    public function __construct(
+        ReservationsRepository $reservationsRepository,
+        TablesRepository $tablesRepository,
+        ContactsRepository $contactsRepository,
+        FormatDate $formatDate,
+        CheckRestaurantLimit $checkRestaurantLimit,
+        CheckTableLimit $checkTableLimit,
+        CheckIfTimeIsTaken $checkIfTimeIsTaken
     ) {
         $this->reservationsRepository = $reservationsRepository;
         $this->tablesRepository = $tablesRepository;

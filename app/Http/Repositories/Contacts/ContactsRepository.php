@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Repositories\Contacts;
 
@@ -12,10 +14,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-
 class ContactsRepository extends BaseRepository
 {
-
     /**
      * UserRepository constructor.
      *

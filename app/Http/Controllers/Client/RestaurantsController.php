@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
@@ -15,6 +18,6 @@ class RestaurantsController
 {
     public function index(RestaurantsRepository $restaurantsRepository): Response
     {
-        return Inertia::render('ReservationForm/ReservationForm')->with(['restaurants'=> $restaurantsRepository->fetchRestaurantsWithTablesForClient()]);
+        return Inertia::render('ReservationForm/ReservationForm')->with(['restaurants' => $restaurantsRepository->fetchRestaurantsWithTablesForClient()]);
     }
 }

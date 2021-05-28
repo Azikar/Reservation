@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -18,7 +20,7 @@ class Restaurants extends Model
         'max_people',
     ];
 
-    public function tables()
+    public function tables(): HasMany
     {
         return $this->hasMany(Tables::class, 'restaurant_id');
     }

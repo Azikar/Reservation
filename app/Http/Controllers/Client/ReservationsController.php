@@ -16,7 +16,7 @@ class ReservationsController
         ));
     }
 
-    public function placeReservation(PlaceReservationRequest $request,PlaceOrderService $placeOrderService): JsonResponse
+    public function placeReservation(PlaceReservationRequest $request, PlaceOrderService $placeOrderService): JsonResponse
     {
         $errors = $placeOrderService->placeOrder($request->validated());
 

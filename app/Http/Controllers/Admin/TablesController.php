@@ -1,5 +1,6 @@
-<?php declare(strict_types=1);
+<?php
 
+declare(strict_types=1);
 
 namespace App\Http\Controllers\Admin;
 
@@ -28,11 +29,11 @@ class TablesController
         $this->tablesRepository = $tablesRepository;
     }
 
-    public function index(int $restautantId): Response
+    public function index(int $restaurantId): Response
     {
-        $data = $this->tablesRepository->getTablesByRestaurant($restautantId);
+        $data = $this->tablesRepository->getTablesByRestaurant($restaurantId);
 
-        return Inertia::render('Tables/TablesIndex')->with(['tables'=> $data, 'restaurantId' => $restautantId]);
+        return Inertia::render('Tables/TablesIndex')->with(['tables'=> $data, 'restaurantId' => $restaurantId]);
     }
 
     public function store(CreateTablesRequest $request): JsonResponse
@@ -41,8 +42,8 @@ class TablesController
         if ($this->tablesServices->addNewTable([
             'table_size' => $request->table_size,
             'restaurant_id' => $request->restaurant_id
-        ]))
-        {
+        ])
+        ) {
             $response = response()->json(['status' => 'success'], 201);
         }
 

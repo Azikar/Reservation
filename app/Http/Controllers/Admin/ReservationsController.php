@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Controllers\Admin;
 
@@ -25,6 +27,6 @@ class ReservationsController
             $data = $this->reservationsRepository->fetchReservationsByRestaurant($restaurantId);
         }
 
-        return Inertia::render('Reservations/ReservationsIndex')->with(['reservations'=> $data, 'restaurantId' => $restaurantId]);
+        return Inertia::render('Reservations/ReservationsIndex')->with(['reservations' => $data, 'restaurantId' => $restaurantId]);
     }
 }

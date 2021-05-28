@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Services;
 
@@ -6,7 +8,6 @@ use App\Http\Repositories\Reservations\ReservationsRepository;
 
 class CheckRestaurantLimit
 {
-
     private ReservationsRepository $reservationsRepository;
 
     public function __construct(ReservationsRepository $reservationsRepository)

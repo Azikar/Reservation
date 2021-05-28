@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Repositories\Restaurants;
 
@@ -8,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
 
 class RestaurantsRepository extends BaseRepository
 {
@@ -56,6 +57,7 @@ class RestaurantsRepository extends BaseRepository
                 ['admin_id', Auth::id()]
             ])->get();
     }
+
     public function fetchRestaurantsWithTablesForClient(): Collection
     {
         return $this->baseQuery()

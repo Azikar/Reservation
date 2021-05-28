@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Http\Services;
 
@@ -25,6 +27,7 @@ class GetAllowedHours
         foreach ($takenTimes as $takenTime)
         {
             $start = $takenTime->start;
+
             while ($start < $takenTime->end) {
                 $hoursToDisable[] = $start;
                 $start ++;
@@ -33,6 +36,4 @@ class GetAllowedHours
 
         return $hoursToDisable;
     }
-
-
 }
