@@ -73,6 +73,7 @@ export default {
     }
 }
 </script>
+
 <style>
 .btn {
     display: inline-block;

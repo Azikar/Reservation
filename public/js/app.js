@@ -19378,7 +19378,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     open: function open() {
-      console.log(this.contacts);
       this.show = true;
     },
     close: function close() {
@@ -19455,8 +19454,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       },
       disabledEndTime: false,
       date: null,
-      start: null,
-      end: null,
+      start: {
+        HH: '',
+        mm: ''
+      },
+      end: {
+        HH: '',
+        mm: ''
+      },
       availableStart: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
       availableEnd: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
       tableMaxSeats: 0,
@@ -19527,9 +19532,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     setTableSize: function setTableSize() {
       for (var table in this.tables) {
         if (this.tables[table].id === this.form.table) {
-          console.log(this.tables[table]);
           this.tableMaxSeats = this.tables[table].table_size;
-          console.log(this.tableMaxSeats);
           break;
         }
       }
@@ -19677,7 +19680,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     open: function open() {
-      console.log(this.contacts);
       this.show = true;
     },
     close: function close() {
@@ -19849,9 +19851,6 @@ __webpack_require__.r(__webpack_exports__);
       "default": null,
       required: true
     }
-  },
-  data: function data() {
-    return {};
   },
   computed: {
     tablesUrl: function tablesUrl() {

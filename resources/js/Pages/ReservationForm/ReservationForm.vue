@@ -122,8 +122,14 @@ export default {
 
             disabledEndTime: false,
             date: null,
-            start: null,
-            end: null,
+            start: {
+                HH: '',
+                mm: ''
+            },
+            end: {
+                HH: '',
+                mm: ''
+            },
             availableStart:[
                 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
             ],
@@ -179,14 +185,12 @@ export default {
     },
     methods: {
         remove(index) {
-             this.form.contacts.splice(index,1)
+             this.form.contacts.splice(index, 1)
         },
         setTableSize() {
             for (let table in this.tables) {
                 if (this.tables[table].id === this.form.table) {
-                    console.log(this.tables[table]);
                     this.tableMaxSeats = this.tables[table].table_size;
-                    console.log(  this.tableMaxSeats)
                     break;
                 }
             }
@@ -221,7 +225,7 @@ export default {
             this.resetEnd();
             this.resetStart();
             let date = this.date.setMinutes(this.date.getMinutes() - this.date.getTimezoneOffset());
-            this.form.date = date.toString().slice(0,10)
+            this.form.date = date.toString().slice(0, 10)
             axios.post('/' + Ziggy.routes['allowedHours'].uri,
                 {
                     date: this.form.date,
@@ -241,7 +245,7 @@ export default {
         },
         checkIfCanAdd() {
             let date = this.date.setMinutes(this.date.getMinutes() - this.date.getTimezoneOffset());
-            this.form.date = date.toString().slice(0,10)
+            this.form.date = date.toString().slice(0, 10)
             if (this.start !== null && this.end !== null) {
                 this.form.start = parseInt(this.start.HH);
                 this.form.end = parseInt(this.end.HH);
@@ -269,7 +273,7 @@ export default {
         },
         post() {
             let date = this.date.setMinutes(this.date.getMinutes() - this.date.getTimezoneOffset());
-            this.form.date = date.toString().slice(0,10)
+            this.form.date = date.toString().slice(0, 10)
             if (this.start !== null && this.end !== null) {
                 this.form.start = parseInt(this.start.HH);
                 this.form.end = parseInt(this.end.HH);
@@ -291,6 +295,7 @@ export default {
     }
 }
 </script>
+
 <style>
 .btn{
     display: inline-block;

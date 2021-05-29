@@ -11,11 +11,11 @@
                 </tr>
                 <template v-for="contact in contacts">
                 <tr>
-                    <td>{{contact.id}}</td>
-                    <td>{{contact.Name}}</td>
-                    <td>{{contact.Surname}}</td>
-                    <td>{{contact.phone}}</td>
-                    <td>{{contact.email}}</td>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.Name }}</td>
+                    <td>{{ contact.Surname }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td>{{ contact.email }}</td>
                 </tr>
                 </template>
             </table>

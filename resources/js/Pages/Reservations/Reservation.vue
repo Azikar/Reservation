@@ -3,19 +3,19 @@
         <contacts ref="contactsModal" :contacts="reservation.contacts"/>
         <div class="row">
             <div v-if='typeof reservation.id !== undefined && reservation.id !== null' class="col-sm">
-                {{reservation.id}}
+                {{ reservation.id }}
             </div>
             <div v-if='typeof reservation.client_name !== undefined && reservation.client_name !== null' class="col-sm">
-                {{reservation.client_name}}
+                {{ reservation.client_name }}
             </div>
             <div v-if='typeof reservation.table_id !== undefined && reservation.table_id !== null' class="col-sm">
-                {{reservation.table_id}}
+                {{ reservation.table_id }}
             </div>
             <div v-if='typeof reservation.start_at !== undefined && reservation.start_at !== null' class="col-sm">
-                {{reservation.start_at}}
+                {{ reservation.start_at }}
             </div>
             <div v-if='typeof reservation.end_at !== undefined && reservation.end_at !== null' class="col-sm">
-                {{reservation.end_at}}
+                {{ reservation.end_at }}
             </div>
             <div class="col-sm">
                 <jet-button @click="getParticipants()">View participants</jet-button>
@@ -59,6 +59,3 @@ export default {
     }
 }
 </script>
-<style>
-
-</style>

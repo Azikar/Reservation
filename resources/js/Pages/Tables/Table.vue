@@ -2,10 +2,10 @@
     <div>
         <div class="row">
             <div class="col-sm">
-                {{id}}
+                {{ id }}
             </div>
             <div class="col-sm">
-                {{tableSize}}
+                {{ tableSize }}
             </div>
         </div>
     </div>

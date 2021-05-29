@@ -4,7 +4,7 @@
             <template v-for="error in errors">
                 <template v-for="message in error">
                     <div class="col-sm">
-                        {{message}}
+                        {{ message }}
                     </div>
                 </template>
             </template>
@@ -34,7 +34,6 @@ export default {
     },
     methods: {
         open() {
-            console.log(this.contacts);
             this.show = true;
         },
         close() {

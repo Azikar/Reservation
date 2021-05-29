@@ -28,7 +28,6 @@ export default {
     },
     methods: {
         open() {
-            console.log(this.contacts);
             this.show = true;
         },
         close() {

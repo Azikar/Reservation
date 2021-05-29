@@ -2,13 +2,13 @@
     <div>
         <div class="row">
             <div class="col-sm">
-                {{name}}
+                {{ name }}
             </div>
             <div class="col-sm">
-                {{tablesCount}}
+                {{ tablesCount }}
             </div>
             <div class="col-sm">
-                {{clientsLimit}}
+                {{ clientsLimit }}
             </div>
             <div class="col-sm">
                 <div class="row">
@@ -64,10 +64,6 @@ export default {
             required: true,
         }
     },
-    data() {
-        return {
-        }
-    },
     computed: {
         tablesUrl() {
             return route('tables-index', this.id);
@@ -78,6 +74,3 @@ export default {
     },
 }
 </script>
-<style>
-
-</style>
